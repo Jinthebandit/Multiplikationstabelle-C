@@ -16,7 +16,6 @@
  *      1. Globale Variable erstellen: "Number"
  *      2. Funktion fuer Eingabe
  *      3. Funktion fuer Ueberpruefung der Eingabe
- *      4. Array fuer Multiplikationstabelle
  *      5. Funktion fuer Multiplikationstabelle ausgeben
  * 
  * Created on 02. October, 11:21
@@ -25,14 +24,10 @@
 // Benötigte Bibliotheken importieren
 #include <stdio.h>
 #include <stdlib.h>
-//#include <stdbool.h>    // um true/false verwenden zu koennen
-//#include <math.h>       // Mathematische Funktionen
-//#include <time.h>       // time()
 #include <string.h>     // strcspn()
 
 // Globale Variablen
 int Number;
-int multTable[10][10] = { 0 }; 
 
 // Forward Funktions
 int inputNumber(void);
@@ -85,11 +80,15 @@ int checkNumber(void) {
     }
 }
 
+/*
+ * Ausgabe der Tabelle
+ * Maximalwert: Number * Number
+ */
 void showTable(int Number) {
     int a;
     int b;
     
-    printf("\nTabelle: %i\n", Number);
+    printf("\n%ier Tabelle:\n", Number);
     
     for (a=1; a<=Number; a++) {
         for (b=1; b<=Number; b++){
