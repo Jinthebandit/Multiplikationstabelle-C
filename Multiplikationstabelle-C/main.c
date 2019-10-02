@@ -13,7 +13,7 @@
  * Gesucht: Multiplikationstabelle
  * Gegeben: Eingabe eines Max-Wertes durch den Benutzer
  * Vorgehen:
- *      1. Globale Variable erstellen
+ *      1. Globale Variable erstellen: "Number"
  *      2. Funktion fuer Eingabe
  *      3. Funktion fuer Ueberpruefung der Eingabe
  *      4. Array fuer Multiplikationstabelle
@@ -36,18 +36,26 @@ int multTable[10][10] = { 0 };
 
 // Forward Funktions
 int inputNumber(void);
+int checkNumber(void);
+void showTable(int Number);
 
 /*
  * Magic happens
  */
 int main(int argc, char** argv) {
     
-    printf("Ihre Eingabe: %i", inputNumber());
+    
+    if (checkNumber()) {
+        showTable(Number);
+    }
 
     return (EXIT_SUCCESS);
 
 }
 
+/*
+ * Eingabe einer Zahl durch den Benutzer
+ */
 int inputNumber(void) {
     char input[2];
     
@@ -58,4 +66,35 @@ int inputNumber(void) {
     }
     
     return Number;
+}
+
+/*
+ * Rekursive Funktion
+ * Ueberpruefen, ob der Eingegeben Wert eine Zahl zwischen 1 und 10 ist
+ * 
+ * Returns: int Number
+ */
+int checkNumber(void) {
+    inputNumber();
+    
+    if (Number > 0 && Number <= 10){
+        return Number;
+    } else {
+        puts("Ihre Eingabe war ungueltig");
+        checkNumber();
+    }
+}
+
+void showTable(int Number) {
+    int a;
+    int b;
+    
+    printf("\nTabelle: %i\n", Number);
+    
+    for (a=1; a<=Number; a++) {
+        for (b=1; b<=Number; b++){
+            printf("%i ", a*b);
+        }
+        printf("\n");
+    }
 }
