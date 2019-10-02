@@ -1,15 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   main.c
- * Author: Jinthebandit
- * dafasdfa
- *
- * Created on 2. Oktober 2019, 08:54
+ * Author: Lukas Fischer
+ * GitHub: https://github.com/Jinthebandit/Multiplikationstabelle-C.git
+ * 
+ * REQUIREMENTS HW-03:
+ * Erstellen eines Tic Tac Toe Spiels
+ * Mit einem Spielfeld von 3x3 Zellen
+ * Das Spielfeld wird mit printf() auf stdout ausgegeben
+ * OPTIONAL: Gewinner wird ausgegeben
+ * OPTIONAL: Nur zulässige Züge werden erlaubt
+ * 
+ * 
+ * Created on 02. October, 11:21
  */
 
 #include <stdio.h>
