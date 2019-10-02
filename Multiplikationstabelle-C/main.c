@@ -54,7 +54,7 @@ int main(int argc, char** argv) {
 int inputNumber(void) {
     char input[2];
     
-    printf("Bitte geben sie eine Zahl von 1-10 ein: ");
+    printf("Bitte geben sie eine Zahl ein: ");
      if (fgets(input, 40, stdin)) {
         input[strcspn(input, "\n")+1] = 0;
         sscanf(input, "%i", &Number);
@@ -72,7 +72,7 @@ int inputNumber(void) {
 int checkNumber(void) {
     inputNumber();
     
-    if (Number > 0 && Number <= 10){
+    if (Number > 0 && Number <= 50){
         return Number;
     } else {
         puts("Ihre Eingabe war ungueltig");
