@@ -93,7 +93,11 @@ void showTable(int Number) {
     
     for (a=1; a<=Number; a++) {
         for (b=1; b<=Number; b++){
-            printf("%i ", a*b);
+            if (a*b < 10) {
+                printf(" %i ", a*b);
+            } else {
+                printf("%i ", a*b);
+            }
         }
         printf("\n");
     }
