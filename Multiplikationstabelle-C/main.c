@@ -85,10 +85,9 @@ int checkNumber(void) {
  * Maximalwert: Number * Number
  */
 void showTable(int Number) {
-    int a;
-    int b;
+    int a,b;
     
-    printf("\n%ier Tabelle:\n", Number);
+    printf("\nTabelle mit Maximalwert %i*%i:\n", Number, Number);
     
     for (a=1; a<=Number; a++) {
         for (b=1; b<=Number; b++){
