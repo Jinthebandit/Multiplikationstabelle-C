@@ -29,7 +29,7 @@
 // Globale Variablen
 int Number;
 
-// Forward Funktions
+// Forward Declarations
 int inputNumber(void);
 int checkNumber(void);
 void showTable(int Number);
@@ -85,12 +85,11 @@ int checkNumber(void) {
  * Maximalwert: Number * Number
  */
 void showTable(int Number) {
-    int a,b;
     
     printf("\nTabelle mit Maximalwert %i*%i:\n", Number, Number);
     
-    for (a=1; a<=Number; a++) {
-        for (b=1; b<=Number; b++){
+    for (int a=1; a<=Number; a++) {
+        for (int b=1; b<=Number; b++){
             if (a*b < 10) {
                 printf(" %i ", a*b);
             } else {
