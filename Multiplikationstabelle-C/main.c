@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
 }
 
 /*
- * Eingabe einer Zahl durch den Benutzer
+ * Eingabe einer Zahl durch den Benutzerdfgasda
  */
 int inputNumber(void) {
     char input[2];
