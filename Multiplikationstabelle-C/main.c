@@ -26,6 +26,7 @@
  * + Make it possible to display tables smaller than 128 as character c.
  * + Display the tables in a orderly fashion.
  * 
+ * 
  * Created on 02. October, 11:21
  */
 
@@ -34,6 +35,8 @@
 #include <stdlib.h>
 #include <string.h>     // strcspn()
 #include <math.h>       // log10
+
+#define PrntType "%*d"
 
 // Globale Variablen
 int Number;
@@ -64,7 +67,7 @@ int inputNumber(void) {
     char input[2];
     
     printf("Bitte geben sie eine Zahl ein: ");
-     if (fgets(input, 40, stdin)) {
+     if (fgets(input, 4, stdin)) {
         input[strcspn(input, "\n")+1] = 0;
         sscanf(input, "%i", &Number);
     }
@@ -79,9 +82,7 @@ int inputNumber(void) {
  * Returns: int Number
  */
 int checkNumber(void) {
-    inputNumber();
-    
-    if (Number > 0 && Number <= 50){
+    if (inputNumber() > 0 && Number <= 45){
         return Number;
     } else {
         puts("Ihre Eingabe war ungueltig");
@@ -95,23 +96,23 @@ int checkNumber(void) {
  */
 void showTable(int Number) {
     
-    printf("\nTabelle mit Maximalwert %i*%i:\n\n", Number, Number);
+    // get length of Number*Number
+    int LEN = (int)log10(Number*Number)+2;
     
-    char str[12];
+    printf("\n%c[1mTabelle mit Maximalwert %i*%i:%c[0m\n\n", 27, Number, Number, 27);
+    
     for (int a=1; a<=Number; a++) {
         if(a == 1){
                 printf("%c[1m%c[4m x|", 27,27);
                 for (int b=1; b<=Number; b++){
-                    sprintf(str, "%d", b);
-                    printf("%4s", str);
+                    printf(PrntType, LEN, b);
                 }
-                printf("%c[0m\n", 27);
+                printf("%c[0m", 27);
+                printf("\n");
             }
-        sprintf(str, "%d", a);
-        printf("%c[1m%2s|%c[0m", 27, str, 27);
+        printf("%c[1m%2d|%c[0m", 27, a, 27);
         for (int b=1; b<=Number; b++){
-            sprintf(str, "%d", a*b);
-            printf("%4s", str);
+            printf(PrntType, LEN, a*b);
         }
         printf("\n");
     }
