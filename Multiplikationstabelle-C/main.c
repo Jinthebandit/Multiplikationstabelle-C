@@ -18,6 +18,14 @@
  *      3. Funktion fuer Ueberpruefung der Eingabe
  *      5. Funktion fuer Multiplikationstabelle ausgeben
  * 
+ * REQUIREMENTS HW-05:
+ * + Ask the user for a number and save it in a variable.
+ * + Filter out wrong inputs.
+ * + Display a multiplication table between 1 and the submitted number.
+ * + Make it possible to switch from decimal to hexadecimal.
+ * + Make it possible to display tables smaller than 128 as character c.
+ * + Display the tables in a orderly fashion.
+ * 
  * Created on 02. October, 11:21
  */
 
