@@ -89,18 +89,21 @@ void showTable(int Number) {
     
     printf("\nTabelle mit Maximalwert %i*%i:\n\n", Number, Number);
     
-    int Length = 2;
+    char str[12];
     for (int a=1; a<=Number; a++) {
         if(a == 1){
-                printf("%c[4m%.*i  ", 27, Length, 0);
+                printf("%c[1m%c[4m x|", 27,27);
                 for (int b=1; b<=Number; b++){
-                    printf("%.*i ", Length, b);
+                    sprintf(str, "%d", b);
+                    printf("%4s", str);
                 }
                 printf("%c[0m\n", 27);
             }
-        printf("%.*i| ", Length, a);
+        sprintf(str, "%d", a);
+        printf("%c[1m%2s|%c[0m", 27, str, 27);
         for (int b=1; b<=Number; b++){
-            printf("%.*i ", Length, a*b);
+            sprintf(str, "%d", a*b);
+            printf("%4s", str);
         }
         printf("\n");
     }
