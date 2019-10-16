@@ -36,9 +36,10 @@
 #include <string.h>     // strcspn()
 #include <math.h>       // log10
 
+// Switch Print Type to display the table as symbols(%*c), decimals(%*d), or hexadecimals(%*x)
 #define PrntType "%*d"
 
-// Globale Variablen
+// Global variables
 int Number;
 
 // Forward Declarations
@@ -61,7 +62,7 @@ int main(int argc, char** argv) {
 }
 
 /*
- * Eingabe einer Zahl durch den Benutzer
+ * Input of a number by the user
  */
 int inputNumber(void) {
     char input[2];
@@ -101,17 +102,18 @@ void showTable(int Number) {
     
     printf("\n%c[1mTabelle mit Maximalwert %i*%i:%c[0m\n\n", 27, Number, Number, 27);
     
-    for (int a=1; a<=Number; a++) {
+    for (int a=1; a <= Number; a++) {
         if(a == 1){
                 printf("%c[1m%c[4m x|", 27,27);
-                for (int b=1; b<=Number; b++){
+                for (int b=1; b <= Number; b++)
+                {
                     printf(PrntType, LEN, b);
                 }
-                printf("%c[0m", 27);
-                printf("\n");
+                printf("%c[0m\n", 27);
             }
         printf("%c[1m%2d|%c[0m", 27, a, 27);
-        for (int b=1; b<=Number; b++){
+        for (int b=1; b <= Number; b++)
+        {
             printf(PrntType, LEN, a*b);
         }
         printf("\n");
